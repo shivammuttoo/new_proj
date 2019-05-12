@@ -26,7 +26,22 @@ import {NgbDatepickerModule, NgbModule, NgbModalModule} from '@ng-bootstrap/ng-b
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(Route),
+    RouterModule.forRoot([
+      { path: "**", redirectTo: "/upcoming", pathMatch: "full" },
+      {
+       path: 'upcoming',
+       component: UpcomingComponent,
+      },
+      {
+          path : 'past',
+          component: PastComponent
+      },
+      {
+          path: 'live',
+          component: LiveComponent
+      }
+  
+  ]),
     NgbModule.forRoot(),
     NgbDatepickerModule,
     FormsModule,
