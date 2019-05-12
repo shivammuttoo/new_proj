@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="col-sm-8 offset-sm-2">
+  <table>
+    <thead>
+      <tr>
+          <th>Date</th>
+          <th>Campaings</th>
+          <th>Price </th>
+          <th>actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let event of events">
+        <td>
+          <p>{{event.date.day}}/{{event.date.month}}/{{event.date.year}}</p>
+          {{event.date | timeAgo}}
+        </td>
+        <td>
+          {{event.campaingsName}}
+        </td>
+        <td>
+          {{event.price}}
+        </td>
+        <td>
+            <div class="input-group">
+                <input placeholder="yyyy-mm-dd"
+                       name="dp" ngbDatepicker #d="ngbDatepicker" date [minDate]="currDate" [(ngModel)]="event.date" (ngModelChange)="reSchedule($event, event.id)">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+        </td>
+      </tr>
+    </tbody>    
+  </table>
+</div>
+<router-outlet></router-outlet>

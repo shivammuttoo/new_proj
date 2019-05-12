@@ -1,0 +1,20 @@
+nav {
+    background-color: #154778
+}
+.width-100{
+    width: 100%
+}
+a.btn.btn-primary  {
+    border: 2px solid  #85A02B;
+    border-radius: 0;
+    background-color: #85A02B;
+    color: white;
+    box-shadow: none;
+}
+a.btn.btn-primary.active, .btn-primary :hover{
+    border: 2px solid  #85A02B !important;
+    border-radius: 0;
+    background-color:white !important;
+    color: #85A02B !important;
+    font-weight: 800
+}

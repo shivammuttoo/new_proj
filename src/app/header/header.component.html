@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand" href="#">New App</a>
+  <select [(ngModel)]="lang" (change)="changeLanguage($event)">
+    <option value="en">english</option>
+    <option value="fn">french</option>
+  </select>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+    </div>
+  </div>
+</nav>
+<div class="container" style="margin-bottom: 35px">
+    <div class="row">
+      <div class="col-sm-12 text-center">
+          <h2>
+              {{labels.manage}} <strong>{{labels.campainings}}</strong> 
+            </h2>
+      </div>      
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <a class='btn btn-primary width-100' [routerLink]="['/upcoming']" routerLinkActive="active" >{{labels.upcommng}} {{labels.campainings}}</a>
+      </div>
+      <div class="col-sm-4">
+        <a class='btn btn-primary width-100'[routerLink]="['/live']" routerLinkActive="active" >{{labels.live}} {{labels.campainings}}</a>
+      </div>
+      <div class="col-sm-4">
+          <a class='btn btn-primary width-100' [routerLink]="['/past']" routerLinkActive="active">{{labels.past}} {{labels.campainings}}</a>
+      </div>
+      </div>     
+</div>
